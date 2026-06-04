@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edisson Hurtado | Marketing Digital Premium</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: #f5f0e6;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .gold {
+      color: #d9b56d;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #d9b56d, #f7d892);
+      color: #111;
+      padding: 16px 30px;
+      border-radius: 40px;
+      font-weight: 800;
+      box-shadow: 0 15px 40px rgba(217,181,109,.25);
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.88)),
+        radial-gradient(circle at top right, rgba(217,181,109,.25), transparent 35%),
+        #050505;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: #c9c0b0;
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #171717, #0a0a0a);
+      border: 1px solid rgba(217,181,109,.35);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 25px 90px rgba(0,0,0,.6);
+    }
+
+    .hero-card img {
+      width: 100%;
+      border-radius: 24px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #d9b56d;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat, .card, .pricing-card, .testimonial {
+      background: linear-gradient(180deg, #141414, #090909);
+      border: 1px solid rgba(217,181,109,.22);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .stat h3 {
+      font-size: 36px;
+      color: #f7d892;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 56px);
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: #b9b0a0;
+      font-size: 18px;
+      margin-bottom: 45px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card h3, .pricing-card h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .card p, .testimonial p, .pricing-card p {
+      color: #c9c0b0;
+    }
+
+    .pricing-section {
+      background: radial-gradient(circle at top, rgba(217,181,109,.14), transparent 40%), #060607;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .pricing-card {
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: #f7d892;
+      transform: translateY(-14px);
+      box-shadow: 0 30px 90px rgba(217,181,109,.18);
+    }
+
+    .badge {
+      position: absolute;
+      top: -14px;
+      right: 25px;
+      background: linear-gradient(135deg, #d9b56d, #f7d892);
+      color: #111;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .price {
+      font-size: 34px;
+      color: #f7d892;
+      font-weight: 900;
+      margin: 12px 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    li {
+      padding: 10px 0;
+      color: #e8dfcf;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    li::before {
+      content: "✓";
+      color: #d9b56d;
+      margin-right: 10px;
+      font-weight: 900;
+    }
+
+    .countdown {
+      text-align: center;
+      background: linear-gradient(135deg, #111, #050505);
+      border-top: 1px solid rgba(217,181,109,.25);
+      border-bottom: 1px solid rgba(217,181,109,.25);
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      border: 1px solid rgba(217,181,109,.35);
+      border-radius: 18px;
+      padding: 18px 24px;
+      min-width: 105px;
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: 34px;
+      color: #f7d892;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+      background: #030303;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #25D366;
+      color: white;
+      padding: 16px 20px;
+      border-radius: 50px;
+      font-weight: 900;
+      z-index: 999;
+      box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    }
+
+    @media(max-width: 900px) {
+      .hero, .grid-3, .pricing-grid, .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container hero">
+    <div>
+      <span class="tag">Marketing Digital Luxury</span>
+      <h1>Transformo marcas en experiencias digitales que venden.</h1>
+      <p>
+        Soy Edisson Hurtado, profesional en Marketing Digital enfocado en estrategia,
+        posicionamiento, contenido de valor, campañas publicitarias y crecimiento comercial medible.
+      </p>
+      <a class="btn" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20una%20asesor%C3%ADa%20de%20marketing%20digital" target="_blank">
+        Solicitar asesoría por WhatsApp
+      </a>
+    </div>
+
+    <div class="hero-card">
+      <img src="foto-profesional.jpg" alt="Edisson Hurtado">
+      <h3>Edisson Hurtado</h3>
+      <p>Especialista en marketing digital, estrategia comercial, contenidos, branding y crecimiento de negocios.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <h3>+5</h3>
+        <p>Años impulsando marcas digitales</p>
+      </div>
+      <div class="stat">
+        <h3>+120</h3>
+        <p>Piezas de contenido estratégico</p>
+      </div>
+      <div class="stat">
+        <h3>+40</h3>
+        <p>Negocios asesorados</p>
+      </div>
+      <div class="stat">
+        <h3>360°</h3>
+        <p>Visión estratégica de marketing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="tag">Sobre el profesional</span>
+    <h2>Una visión estratégica para marcas que quieren crecer</h2>
+    <p class="section-intro">
+      Edisson Hurtado combina análisis, creatividad y ejecución para construir presencia digital
+      profesional. Su enfoque está orientado a convertir redes sociales, campañas, contenido y páginas
+      web en herramientas reales de captación, posicionamiento y ventas.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Estrategia</h3>
+        <p>Planes digitales personalizados según objetivos, público, oferta y etapa del negocio.</p>
+      </div>
+      <div class="card">
+        <h3>Contenido de valor</h3>
+        <p>Diseño de mensajes, piezas gráficas, reels y contenido persuasivo para conectar y vender.</p>
+      </div>
+      <div class="card">
+        <h3>Resultados medibles</h3>
+        <p>Seguimiento de métricas, optimización de campañas y toma de decisiones basada en datos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="tag">Servicios</span>
+    <h2>Soluciones digitales para elevar tu marca</h2>
+    <p class="section-intro">
+      Servicios diseñados para atraer clientes, fortalecer la imagen profesional y aumentar oportunidades comerciales.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Gestión de Redes Sociales</h3>
+        <p>Administración, planeación, diseño y publicación de contenido estratégico.</p>
+      </div>
+      <div class="card">
+        <h3>Meta Ads & Google Ads</h3>
+        <p>Campañas publicitarias optimizadas para alcance, prospectos y conversiones.</p>
+      </div>
+      <div class="card">
+        <h3>Landing Pages</h3>
+        <p>Páginas web de alto impacto visual diseñadas para convertir visitantes en clientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planes" class="pricing-section">
+  <div class="container">
+    <span class="tag">Planes estratégicos</span>
+    <h2>Elige el paquete ideal para transformar tu presencia digital</h2>
+    <p class="section-intro">
+      Paquetes pensados para emprendedores, marcas personales y empresas que desean crecer con estrategia,
+      contenido premium y acciones medibles.
+    </p>
+
+    <div class="pricing-grid">
+
+      <article class="pricing-card">
+        <h3>Plan Starter</h3>
+        <div class="price">$400 USD</div>
+        <p>Ideal para emprendedores que necesitan presencia digital profesional.</p>
+
+        <ul>
+          <li>Auditoría inicial de marca</li>
+          <li>Optimización de perfiles digitales</li>
+          <li>Estrategia básica de contenido</li>
+          <li>8 piezas gráficas profesionales</li>
+          <li>4 reels optimizados para alcance</li>
+          <li>Calendario de publicaciones</li>
+          <li>Copywriting persuasivo</li>
+          <li>Configuración de WhatsApp Business</li>
+          <li>Reporte mensual de resultados</li>
+          <li>Soporte vía WhatsApp</li>
+        </ul>
+
+        <a class="btn" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Starter" target="_blank">
+          Quiero este plan
+        </a>
+      </article>
+
+      <article class="pricing-card featured">
+        <div class="badge">Más recomendado</div>
+        <h3>Plan Growth</h3>
+        <div class="price">$1.000.000 COP</div>
+        <p>Diseñado para empresas que buscan crecimiento constante y generación de prospectos.</p>
+
+        <ul>
+          <li>Estrategia de Marketing Digital personalizada</li>
+          <li>12 diseños profesionales mensuales</li>
+          <li>8 reels optimizados para conversión</li>
+          <li>Gestión de redes sociales</li>
+          <li>Campañas publicitarias Meta Ads</li>
+          <li>Segmentación avanzada de audiencias</li>
+          <li>Instalación de Pixel y eventos</li>
+          <li>Embudo de captación de leads</li>
+          <li>Optimización de WhatsApp Business</li>
+          <li>Reporte de métricas y KPIs</li>
+          <li>Reunión estratégica mensual</li>
+        </ul>
+
+        <a class="btn" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Growth" target="_blank">
+          Escalar mi negocio
+        </a>
+      </article>
+
+      <article class="pricing-card">
+        <h3>Plan Premium 360°</h3>
+        <div class="price">$2.500.000 COP</div>
+        <p>Solución integral para marcas que desean posicionarse como referentes.</p>
+
+        <ul>
+          <li>Dirección estratégica de marketing</li>
+          <li>Gestión completa de marca digital</li>
+          <li>Landing Page de alta conversión</li>
+          <li>Automatización de WhatsApp y CRM</li>
+          <li>Campañas avanzadas Meta Ads y Google Ads</li>
+          <li>Remarketing y recuperación de prospectos</li>
+          <li>Producción de contenido premium</li>
+          <li>20 piezas gráficas mensuales</li>
+          <li>12 reels de alto impacto</li>
+          <li>Dashboard de métricas en tiempo real</li>
+          <li>Consultoría estratégica personalizada</li>
+          <li>Soporte prioritario</li>
+        </ul>
+
+        <a class="btn" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Premium%20360" target="_blank">
+          Quiero posicionarme
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="tag">Testimonios</span>
+    <h2>Clientes que confiaron en una estrategia diferente</h2>
+
+    <div class="grid-3">
+      <div class="testimonial">
+        <p>“Nuestra marca empezó a verse más profesional y logramos más consultas por WhatsApp.”</p>
+        <strong>Cliente empresarial</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>“El contenido dejó de ser improvisado y ahora tenemos una estrategia clara para vender.”</p>
+        <strong>Emprendedor digital</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>“Las campañas nos ayudaron a llegar a clientes reales y mejorar la presencia de la marca.”</p>
+        <strong>Marca comercial</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="countdown">
+  <div class="container">
+    <span class="tag">Cupos limitados</span>
+    <h2>Solo se aceptan 5 nuevos proyectos por mes</h2>
+    <p class="section-intro" style="margin:auto;">
+      Para garantizar una atención personalizada, los cupos son limitados. Reserva tu asesoría antes de que cierre la agenda.
+    </p>
+
+    <div class="timer">
+      <div class="time-box">
+        <strong id="days">00</strong>
+        Días
+      </div>
+      <div class="time-box">
+        <strong id="hours">00</strong>
+        Horas
+      </div>
+      <div class="time-box">
+        <strong id="minutes">00</strong>
+        Minutos
+      </div>
+      <div class="time-box">
+        <strong id="seconds">00</strong>
+        Segundos
+      </div>
+    </div>
+
+    <a class="btn" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20reservar%20mi%20asesor%C3%ADa%20antes%20de%20que%20se%20cierren%20los%20cupos" target="_blank">
+      Reservar mi cupo ahora
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="text-align:center;">
+    <span class="tag">CTA Final</span>
+    <h2>Tu marca no necesita más publicaciones. Necesita una estrategia que convierta.</h2>
+    <p class="section-intro" style="margin:auto auto 35px;">
+      Agenda una asesoría y descubre cómo transformar tu presencia digital en una experiencia premium que genere confianza, autoridad y ventas.
+    </p>
+
+    <a class="btn" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20empezar%20mi%20estrategia%20de%20marketing%20digital" target="_blank">
+      Hablar con Edisson por WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Edisson Hurtado | Marketing Digital Premium</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/573224231727?text=Hola%20Edisson%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios" target="_blank">
+  WhatsApp
+</a>
+
+<script>
+  const countdownDate = new Date();
+  countdownDate.setDate(countdownDate.getDate() + 5);
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate.getTime() - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").innerText = String(days).padStart(2, "0");
+    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+</body>
+</html>
